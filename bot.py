@@ -12,7 +12,8 @@ from storage import load_data, save_data
 load_dotenv()
 
 BOT_TOKEN = os.getenv("BOT_TOKEN")
-YOUR_USER_ID = int(os.getenv("YOUR_USER_ID"))
+user_id = os.getenv("YOUR_USER_ID", "0")
+YOUR_USER_ID = int(user_id) if user_id else 0
 
 logging.basicConfig(
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
